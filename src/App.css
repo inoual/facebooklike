@@ -1,38 +1,135 @@
 .App {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.user {
+  background-color: #61dafb;
+  list-style-type: none;
+  margin: 50 px;
+  border-radius: 5px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user:hover {
+  background-color: #61b0fb;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+  align-items: center;
+}
+
+.post {
+  border: 1px solid;
+  list-style-type: none;
+  width: 100%;
+  height: auto;
+  margin: 30px 20px;
+  background-color: #f8feff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.left {
+  float:left
+}
+.right {
+  float: right;
+}
+
+.selected {
+  background-color: #0099ff;
+}
+
+.horizontal-list
+{  
+  display: flex;
+  justify-content: center;
+}
+
+.post-list {
+  width: 450px;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items:  center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.area {
+  max-width: 400px;
+  border: 1px solid;
+  list-style-type: none;
+  width: 100%;
+  height: auto;
+  margin: 30px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.comment-area {
+  max-width: 400px;
+  border: 1px solid;
+  list-style-type: none;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.sub {
+  margin: 0px;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 15px 35px;
+  background-color: #61dafb;
+  border-radius: 25px;
+}
+
+.dot {
+  height: 4px;
+  width: 4px;
+  margin: 0.5px;
+  
+  background-color: rgb(165, 165, 165);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.framed {
+  font-weight: bolder;
+}
+
+.framed:hover {
+  background-color: grey;
+  border-radius: 50%;
+}
+
+.comment {
+  list-style-type: none;
+  left: 0;
+  right :0;
+}
+
+.commentUserName {  
+  font-size: small;
+  font-weight: bold;
+}
+
+.commentContent {
+  box-sizing: border-box;
+  font-size: smaller;
+  padding-bottom: 15px;
 }
