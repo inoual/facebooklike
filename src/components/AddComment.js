@@ -15,11 +15,7 @@ const AddComment = () => {
     const [id, setId] = useState(10)
 
     
-    const handlePost = (e) => {
-    return (
-        setNewPost(prevState => prevState = e.target.value)
-        )
-    };
+    const handlePost = e => setNewPost(prevState => prevState = e.target.value)
 
     const submitComment = (e) => {
         e.preventDefault();

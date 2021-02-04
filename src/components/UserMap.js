@@ -8,12 +8,12 @@ const UserMap = () => {
 
 
     const select = (id) => {
-    var updatedList = userList.map((person) =>
+    let updatedList = userList.map((person) =>
         person.id === id
         ? {
             ...person,
             selected: true
-            }
+            }   
         : {
             ...person,
             selected: false
@@ -24,9 +24,7 @@ const UserMap = () => {
 
     return (
         <div>
-            <ul style={{display: 'flex'}} className='horizontal-list'>
-                {userList.map(user => <button key={user.id} className={`user ${user.selected ? "selected" : ""}`} onClick={() => select(user.id)}>{user.name}</button>)}
-            </ul>
+            {userList.map(user => <button key={user.id} type='button' class='btn btn-outline-dark' onClick={() => select(user.id)}>{user.name}</button>)}
         </div>
     )
 }

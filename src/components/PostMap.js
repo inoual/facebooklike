@@ -3,36 +3,34 @@ import { useRecoilValue } from "recoil";
 import { posts } from "../atoms/posts";
 import { users } from "../atoms/users";
 import Comment from "./Comment";
-import Like from "./Like";
+// import Like from "./Like";
 import RemovePost from "./RemovePost";
 
-
 const PostMap = () => {
-
-
   const postList = useRecoilValue(posts);
   const userList = useRecoilValue(users);
-  
+
   const displayPosts = (postList) => {
     return postList.map((post) => (
-      <li key={post.id} className="post">        
-          <h5 className="userName left">{userList[post.creatorId].name} a posté :</h5>
-          <RemovePost id={post.id} />        
-        <hr style={{clear: 'both'}} />
-        <p className="postContent">{post.text}</p>
-        
-        <Like postId={post.id} />
-        <Comment postId={post.id} />
-      </li>
+      <>
+        <div class="card text-dark bg-light mb-3" style={{ width: "100%" }}>
+          <div class="card-header">
+            {userList[post.creatorId].name} a posté :
+            <RemovePost id={post.id} />{" "}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Time</h5>
+            <p class="card-text">{post.text}</p>
+            <Comment postId={post.id} />
+          </div>
+        </div>
+      </>
     ));
   };
 
-
-
-
   return (
-    <div className='container'>
-      <ul className='post-list'>{displayPosts(postList)}</ul>
+    <div className="container">
+      <ul className="post-list">{displayPosts(postList)}</ul>
     </div>
   );
 };
